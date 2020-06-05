@@ -1,8 +1,95 @@
 // Assignment code here
 
 
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
 
-function generatePassword() {
+var newLocal = [
+  '@', '%', '+','\\',
+  '/',
+  "'",
+  '!',
+  '#',
+  '$',
+  '^',
+  '?',
+  ':',
+  ',',
+  ')',
+  '(',
+  '}',
+  '{',
+  ']',
+  '[',
+  '~',
+  '-',
+  '_',
+  '.'
+];
+// Array of numeric characters to be included in password
+var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+// Array of lowercase characters to be included in password
+var lowerCasedCharacters = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z'
+];
+// Array of uppercase characters to be included in password
+var upperCasedCharacters = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z'
+];
+
+
+// Write password to the #password input
+function writePassword() {
   var passwordLength = 0
   
   //ask user for password length
@@ -14,26 +101,28 @@ function generatePassword() {
       console.log(passwordLength); 
       window.alert("Valid Character Length");
           
-  var lowercase = confirm("Would you like to include lowercase letters?");
-  var uppercaser = confirm("Would you like to include uppercase letters?");
-  var numeric = confirm("Would you like to include numbers?");
-  var specialcharacters = confirm("Would you like to include special characters?");
-  
-  
+  var hasLowercase = confirm("Would you like to include lowercase letters?");
+  var hasUppercase = confirm("Would you like to include uppercase letters?");
+  var hasNumeric = confirm("Would you like to include numbers?");
+  var hasSpecialcharacters = confirm("Would you like to include special characters?");
+
+  var password = generatePassword();
+  if (hasLowercase) {
+
   }
 
-  
-    
+  if (hasUppercase) {
 
+  }
 
+  if (hasNumeric) {
 
+  }
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+  if (hasSpecialcharacters) {
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
+  }
+
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
