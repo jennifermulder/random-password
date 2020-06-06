@@ -12,11 +12,16 @@ const lowerCasedCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 
 // Array of uppercase characters to be included in password
 const upperCasedCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
+let lowerPasswordSet = [];
+let upperPasswordSet = [];
+let numericPasswordSet = [];
+let specialPasswordSet = [];
 
 
 // Write password to the #password input
 function writePassword() {
   var passwordLength = 0
+
   
   //ask user for password length
          //if # is not 8-128 will continue to prompt
@@ -34,66 +39,60 @@ function writePassword() {
 
   //var password = generatePassword() 
   if (hasLowerCase) {
-      const PasswordSet = new Set();
-      while(PasswordSet.size < parseInt(passwordLength) / 4) {
+      while(lowerPasswordSet.length < parseInt(passwordLength) / 4) {
         const randomIndex = Math.floor(Math.random() * lowerCasedCharacters.length)
         console.log(randomIndex);
         const character = lowerCasedCharacters[randomIndex];
-        PasswordSet.add(character);
-
-
-        
+        lowerPasswordSet.push(character);     
       }
-      console.log(PasswordSet)
+      console.log(lowerPasswordSet)
       
     }
 
   if (hasUpperCase) {
-      const PasswordSet = new Set();
-      while(PasswordSet.size < parseInt(passwordLength) / 4) {
+      while(upperPasswordSet.length < parseInt(passwordLength) / 4) {
         const randomIndex = Math.floor(Math.random() * upperCasedCharacters.length)
         console.log(randomIndex);
         const character = upperCasedCharacters[randomIndex];
-        PasswordSet.add(character);
-        
+        upperPasswordSet.push(character);
       }
-      console.log(PasswordSet)
+      console.log(upperPasswordSet)
+   
     }
 
   if (hasNumeric) {
-      const PasswordSet = new Set();
-      while(PasswordSet.size < parseInt(passwordLength) / 4) {
+      while(numericPasswordSet.length < parseInt(passwordLength) / 4) {
         const randomIndex = Math.floor(Math.random() * numericCharacters.length)
         console.log(randomIndex);
         const character = numericCharacters[randomIndex];
-        PasswordSet.add(character);
-        
+        numericPasswordSet.push(character);
       }
-      console.log(PasswordSet)
+      console.log(numericPasswordSet)
+      
     }
 
   if (hasSpecialCharacters) {
-      const PasswordSet = new Set();
-      while(PasswordSet.size < parseInt(passwordLength) / 4) {
+      while(specialPasswordSet.length < parseInt(passwordLength) / 4) {
         const randomIndex = Math.floor(Math.random() * specialCharacters.length)
         console.log(randomIndex);
         const character = specialCharacters[randomIndex];
-        PasswordSet.add(character);
-        
+        specialPasswordSet.push(character);
       }
-      console.log(PasswordSet)
+      console.log(specialPasswordSet)
     }
 
   else {
     
   }
 
+  //merge sets for each criteria
+  const mergedSets =[...lowerPasswordSet,...upperPasswordSet,...numericPasswordSet,...specialPasswordSet];
  
-  
+  console.log(mergedSets);
 
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = mergedSets.join("");
 
 }
 
