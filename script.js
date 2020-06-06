@@ -32,34 +32,63 @@ function writePassword() {
   var hasNumeric = confirm("Would you like to include numbers?");
   var hasSpecialCharacters = confirm("Would you like to include special characters?");
 
-  var password = generatePassword() 
+  //var password = generatePassword() 
   if (hasLowerCase) {
-      const passwordSet = new Set();
-      while(passwordSet.size < parseInt(passwordLength) / 4) {
+      const PasswordSet = new Set();
+      while(PasswordSet.size < parseInt(passwordLength) / 4) {
         const randomIndex = Math.floor(Math.random() * lowerCasedCharacters.length)
         console.log(randomIndex);
         const character = lowerCasedCharacters[randomIndex];
-        passwordSet.add(character);
+        PasswordSet.add(character);
+
+
+        
       }
-      console.log(passwordSet)
-  }
+      console.log(PasswordSet)
+      
+    }
 
   if (hasUpperCase) {
-
-  }
+      const PasswordSet = new Set();
+      while(PasswordSet.size < parseInt(passwordLength) / 4) {
+        const randomIndex = Math.floor(Math.random() * upperCasedCharacters.length)
+        console.log(randomIndex);
+        const character = upperCasedCharacters[randomIndex];
+        PasswordSet.add(character);
+        
+      }
+      console.log(PasswordSet)
+    }
 
   if (hasNumeric) {
-
-  }
+      const PasswordSet = new Set();
+      while(PasswordSet.size < parseInt(passwordLength) / 4) {
+        const randomIndex = Math.floor(Math.random() * numericCharacters.length)
+        console.log(randomIndex);
+        const character = numericCharacters[randomIndex];
+        PasswordSet.add(character);
+        
+      }
+      console.log(PasswordSet)
+    }
 
   if (hasSpecialCharacters) {
-
-  }
+      const PasswordSet = new Set();
+      while(PasswordSet.size < parseInt(passwordLength) / 4) {
+        const randomIndex = Math.floor(Math.random() * specialCharacters.length)
+        console.log(randomIndex);
+        const character = specialCharacters[randomIndex];
+        PasswordSet.add(character);
+        
+      }
+      console.log(PasswordSet)
+    }
 
   else {
     
   }
 
+ 
   
 
   var passwordText = document.querySelector("#password");
