@@ -38,6 +38,7 @@ function writePassword() {
   var hasSpecialCharacters = confirm("Would you like to include special characters?");
 
   //var password = generatePassword() 
+
   if (hasLowerCase) {
       while(lowerPasswordSet.length < parseInt(passwordLength) / 4) {
         const randomIndex = Math.floor(Math.random() * lowerCasedCharacters.length)
@@ -84,6 +85,7 @@ function writePassword() {
   else {
     
   }
+  window.alert("Accepted Character Criteria");
 
   //merge sets for each criteria
   const mergedSets =[...lowerPasswordSet,...upperPasswordSet,...numericPasswordSet,...specialPasswordSet];
@@ -92,6 +94,7 @@ function writePassword() {
 
   var passwordText = document.querySelector("#password");
 
+  //remove commas
   passwordText.value = mergedSets.join("");
 
 }
