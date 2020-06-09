@@ -17,6 +17,38 @@ let upperPasswordSet = [];
 let numericPasswordSet = [];
 let specialPasswordSet = [];
 
+var passwordAllocate = function() {
+  if (hasLowerCase === true || hasUpperCase === true || hasNumeric === true || hasSpecialCharacters === true)
+  {
+    return 1
+    
+  } else if ( (hasLowerCase === true && hasUpperCase === true) || 
+    (hasLowerCase === true && hasNumeric === true) ||
+    (hasLowerCase === true && hasSpecialCharacters === true) ||
+    (hasUpperCase === true && hasNumeric === true) ||
+    (hasUpperCase === true && hasSpecialCharacters === true) ||
+    (hasNumeric === true && hasSpecialCharacters === true)
+  ) {
+    return 2
+    
+  } else if ( 
+    (hasLowerCase === true && hasUpperCase === true && hasNumeric === true) ||
+    (hasLowerCase === true && hasUpperCase === true && hasSpecialCharacters === true) ||
+    (hasUpperCase === true && hasNumeric === true && hasSpecialCharacters === true) ||
+    (hasLowerCase === true && hasNumeric === true && hasSpecialCharacters === true)
+  ) {
+    return 3
+    
+  } else if (hasLowerCase === true && hasUpperCase === true && hasNumeric === true && hasSpecialCharacters === true)
+    {
+    return 4
+    
+  }
+    
+    
+}
+console.log(passwordAllocate)
+
 
 // Write password to the #password input
 function writePassword() {
@@ -40,7 +72,7 @@ function writePassword() {
   //var password = generatePassword() 
 
   if (hasLowerCase) {
-      while(lowerPasswordSet.length < parseInt(passwordLength) / 4) {
+      while(lowerPasswordSet.length < parseInt(passwordLength) / passwordAllocate) {
         const randomIndex = Math.floor(Math.random() * lowerCasedCharacters.length)
         console.log(randomIndex);
         const character = lowerCasedCharacters[randomIndex];
