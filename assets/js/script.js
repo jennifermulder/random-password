@@ -3,7 +3,7 @@
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-
+// Array of special characters to be included in password
 const specialCharacters = ['@', '%', '+','\\','/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
 // Array of numeric characters to be included in password
 const numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -12,7 +12,7 @@ const lowerCasedCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 
 // Array of uppercase characters to be included in password
 const upperCasedCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-
+//Setup Arrays
 let lowerPasswordSet = [];
 let upperPasswordSet = [];
 let numericPasswordSet = [];
@@ -30,9 +30,9 @@ function writePassword() {
         passwordLength = parseInt(prompt("How long do you want the length of the password? Enter a number 8 - 128 to continue"));
       }
 
-       
+       //validation
       window.alert("Valid Character Length");
-          
+  //comfirm criteria included        
   var hasLowerCase = confirm("Would you like to include lowercase letters?");
   var hasUpperCase = confirm("Would you like to include uppercase letters?");
   var hasNumeric = confirm("Would you like to include numbers?");
@@ -87,7 +87,7 @@ function writePassword() {
   const mergedArray =[...lowerPasswordSet,...upperPasswordSet,...numericPasswordSet,...specialPasswordSet]; 
 
   
-
+  
   const finalPassword = new Array (passwordLength);
   for (let i = 0; i < finalPassword.length; i++) {
     finalPassword [i] = mergedArray [i]
