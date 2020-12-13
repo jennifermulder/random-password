@@ -11,7 +11,7 @@ To generate random passwords that meet the criteria chosen by the user
 * JS
 
 ## Website
-https://jennifer.mulder.github.io/random-password/
+https://jennifermulder.github.io/random-password/
 
 ## Project Status
 Password generator is complete and functional
